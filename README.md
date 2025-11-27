@@ -15,37 +15,38 @@ Web/DA — это веб-приложение для анализа эффект
 - Источники — подключение внешних API (MWS Tables и др.).
 ---
 Технологии
-Frontend
+### Frontend
 - React (Vite)
 - Axios
 - CSS 
 - SVG-иконки
-Backend
+
+### Backend
 - Python
 - FastAPI
 - Pydantic
-- Mock-данные (позднее заменяются на реальные из MWS Tables)
+- Mock-данные
 ---
 ## Структура проекта
 
-/backend
-main.py
-models.py
-services.py
-sample_data.py
-requirements.txt
+-/backend
+-main.py
+-models.py
+-services.py
+-sample_data.py
+-requirements.txt
 
-/frontend
-index.html
-package.json
-vite.config.js
-/src
-App.jsx
-main.jsx
-api.js
-styles.css
-/components
-/pages
+-/frontend
+-index.html
+-package.json
+-vite.config.js
+-/src
+-App.jsx
+-main.jsx
+-api.js
+-styles.css
+-/components
+-/pages
 
 ---
 ## Как запустить проект
