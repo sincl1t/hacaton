@@ -1,0 +1,64 @@
+# Web/DA — Умный реестр контента в MWS Tables
+Проект, созданный в рамках хакатона.  
+Web/DA — это веб-приложение для анализа эффективности контента с использованием данных из MWS Tables и возможностей LLM.
+Приложение позволяет:
+- просматривать сводную статистику контента,
+- анализировать метрики публикаций,
+- сравнивать посты между собой,
+- получать текстовые инсайты через LLM,
+- изучать детали каждой публикации,
+##Демо функциональности
+- Dashboard — ключевые метрики: просмотры, лайки, комментарии, ER, sentiment.  
+- Реестр контента — таблица со всеми публикациями, быстрые метрики, карточка деталей.  
+- Сравнение — сравнение эффективности выбранных постов.  
+- LLM-чат — диалог с моделью для получения аналитических инсайтов.  
+- Источники — подключение внешних API (MWS Tables и др.).
+---
+Технологии
+Frontend
+- React (Vite)
+- Axios
+- CSS 
+- SVG-иконки
+Backend
+- Python
+- FastAPI
+- Pydantic
+- Mock-данные (позднее заменяются на реальные из MWS Tables)
+---
+Структура проекта
+/backend
+main.py
+models.py
+services.py
+sample_data.py
+requirements.txt
+/frontend
+index.html
+package.json
+vite.config.js
+/src
+App.jsx
+main.jsx
+api.js
+styles.css
+/components
+/pages
+---
+Как запустить проект
+Backend
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+Backend поднимется на:
+http://localhost:8000
+Документация API:
+http://localhost:8000/docs
+cd frontend
+npm install
+npm run dev
+Frontend откроется на:
+http://localhost:5173
+Чат-бот отправляет запросы на эндпоинт:
+POST /api/chat
+и получает текстовый аналитический ответ (LLM подключается на стороне backend-а).
