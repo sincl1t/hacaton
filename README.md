@@ -26,13 +26,15 @@ Backend
 - Pydantic
 - Mock-данные (позднее заменяются на реальные из MWS Tables)
 ---
-Структура проекта
+## Структура проекта
+
 /backend
 main.py
 models.py
 services.py
 sample_data.py
 requirements.txt
+
 /frontend
 index.html
 package.json
@@ -44,8 +46,9 @@ api.js
 styles.css
 /components
 /pages
+
 ---
-## ▶️ Как запустить проект
+## Как запустить проект
 
 ### Backend
 ```bash
