@@ -27,28 +27,6 @@ Web/DA — это веб-приложение для анализа эффект
 - Pydantic
 - Mock-данные
 ---
-## Структура проекта
-
--/backend
--main.py
--models.py
--services.py
--sample_data.py
--requirements.txt
-
--/frontend
--index.html
--package.json
--vite.config.js
--/src
--App.jsx
--main.jsx
--api.js
--styles.css
--/components
--/pages
-
----
 ## Как запустить проект
 
 ### Backend
