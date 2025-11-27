@@ -45,8 +45,10 @@ styles.css
 /components
 /pages
 ---
-Как запустить проект
-Backend
+## ▶️ Как запустить проект
+
+### Backend
+```bash
 cd backend
 pip install -r requirements.txt
 uvicorn main:app --reload
@@ -54,11 +56,9 @@ Backend поднимется на:
 http://localhost:8000
 Документация API:
 http://localhost:8000/docs
+Frontend
 cd frontend
 npm install
 npm run dev
 Frontend откроется на:
 http://localhost:5173
-Чат-бот отправляет запросы на эндпоинт:
-POST /api/chat
-и получает текстовый аналитический ответ (LLM подключается на стороне backend-а).
