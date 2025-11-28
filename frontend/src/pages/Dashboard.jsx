@@ -1,6 +1,10 @@
+// frontend/src/pages/Dashboard.jsx
 import React, { useEffect, useState } from "react";
 import { getSummary } from "../api";
 import KpiCard from "../components/KpiCard";
+import EngagementPanel from "../components/EngagementPanel";
+import StatsCharts from "../components/StatsCharts";
+import OverviewHero from "../components/OverviewHero";
 
 export default function Dashboard() {
   const [stats, setStats] = useState(null);
@@ -21,6 +25,11 @@ export default function Dashboard() {
       <p style={{ fontSize: 13, color: "#9da3b5" }}>
         Быстрый обзор эффективности контента за выбранный период.
       </p>
+
+      {/* Новый hero-блок в стиле "Social Media Overview" */}
+      <OverviewHero stats={stats} />
+
+      {/* KPI карточки */}
       <div
         style={{
           display: "grid",
@@ -51,6 +60,13 @@ export default function Dashboard() {
         />
       </div>
 
+      {/* Инфографика: вовлечённость + настроение аудитории */}
+      <EngagementPanel stats={stats} />
+
+      {/* График + круговая диаграмма по структуре активности */}
+      <StatsCharts stats={stats} />
+
+      {/* Блок с LLM-инсайтами */}
       <div
         style={{
           marginTop: 16,

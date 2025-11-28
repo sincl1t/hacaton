@@ -5,7 +5,7 @@ from typing import List
 import os
 import uuid
 
-from .models import (
+from models import (
     ContentItem,
     SummaryStats,
     CompareRequest,
@@ -16,7 +16,7 @@ from .models import (
     UserProfile,
     UserProfileUpdateRequest,
 )
-from .services import (
+from services import (
     get_all_content,
     get_summary_stats,
     get_content_by_id,

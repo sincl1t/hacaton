@@ -7,8 +7,8 @@ import hashlib
 import httpx
 from dotenv import load_dotenv
 
-from .sample_data import CONTENT_ITEMS
-from .models import (
+from sample_data import CONTENT_ITEMS
+from models import (
     SummaryStats,
     ContentItem,
     ChatResponse,
