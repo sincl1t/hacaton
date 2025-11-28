@@ -27,6 +27,17 @@ const IconRegistry = () => (
   </svg>
 );
 
+// новая иконка таблиц
+const IconTables = () => (
+  <svg {...iconProps}>
+    <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" strokeWidth="1.6" />
+    <line x1="4" y1="10" x2="20" y2="10" stroke="currentColor" strokeWidth="1.4" />
+    <line x1="4" y1="15" x2="20" y2="15" stroke="currentColor" strokeWidth="1.4" />
+    <line x1="10" y1="4" x2="10" y2="20" stroke="currentColor" strokeWidth="1.4" />
+    <line x1="15" y1="4" x2="15" y2="20" stroke="currentColor" strokeWidth="1.4" />
+  </svg>
+);
+
 const IconCompare = () => (
   <svg {...iconProps}>
     <path
@@ -176,28 +187,36 @@ export default function Sidebar() {
         </div>
 
         <NavLink to="/dashboard" className={navLinkClassName}>
-          <span className="sidebar-link-icon" style={iconWrapperStyle}>
+          <span style={iconWrapperStyle}>
             <IconDashboard />
           </span>
           <span style={labelStyle}>Dashboard</span>
         </NavLink>
 
         <NavLink to="/registry" className={navLinkClassName}>
-          <span className="sidebar-link-icon" style={iconWrapperStyle}>
+          <span style={iconWrapperStyle}>
             <IconRegistry />
           </span>
           <span style={labelStyle}>Реестр контента</span>
         </NavLink>
 
+        {/* новый пункт "Таблицы" */}
+        <NavLink to="/tables" className={navLinkClassName}>
+          <span style={iconWrapperStyle}>
+            <IconTables />
+          </span>
+          <span style={labelStyle}>Таблицы</span>
+        </NavLink>
+
         <NavLink to="/compare" className={navLinkClassName}>
-          <span className="sidebar-link-icon" style={iconWrapperStyle}>
+          <span style={iconWrapperStyle}>
             <IconCompare />
           </span>
           <span style={labelStyle}>Сравнение</span>
         </NavLink>
 
         <NavLink to="/chat" className={navLinkClassName}>
-          <span className="sidebar-link-icon" style={iconWrapperStyle}>
+          <span style={iconWrapperStyle}>
             <IconChat />
           </span>
           <span style={labelStyle}>Чат-бот (LLM)</span>
@@ -205,7 +224,7 @@ export default function Sidebar() {
         </NavLink>
 
         <NavLink to="/settings" className={navLinkClassName}>
-          <span className="sidebar-link-icon" style={iconWrapperStyle}>
+          <span style={iconWrapperStyle}>
             <IconSettings />
           </span>
           <span style={labelStyle}>Источники</span>
@@ -225,7 +244,7 @@ export default function Sidebar() {
         </div>
 
         <NavLink to="/profile" className={navLinkClassName}>
-          <span className="sidebar-link-icon" style={iconWrapperStyle}>
+          <span style={iconWrapperStyle}>
             <IconProfile />
           </span>
           <span style={labelStyle}>Профиль</span>

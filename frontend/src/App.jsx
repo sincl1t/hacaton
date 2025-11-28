@@ -14,6 +14,7 @@ import Settings from "./pages/Settings";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
+import Tables from "./pages/Tables";
 import { useAuth } from "./context/AuthContext";
 
 function ProtectedRoute({ children }) {
@@ -71,6 +72,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+
         <Route
           path="/registry"
           element={
@@ -79,6 +81,16 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route
+          path="/tables"
+          element={
+            <ProtectedRoute>
+              <Tables />
+            </ProtectedRoute>
+          }
+        />
+
         <Route
           path="/compare"
           element={
@@ -87,6 +99,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+
         <Route
           path="/chat"
           element={
@@ -95,6 +108,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+
         <Route
           path="/settings"
           element={
@@ -103,7 +117,8 @@ function App() {
             </ProtectedRoute>
           }
         />
-         <Route
+
+        <Route
           path="/profile"
           element={
             <ProtectedRoute>
@@ -111,6 +126,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+
         {/* корень = дашборд */}
         <Route
           path="/"
@@ -120,6 +136,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+
         {/* всё остальное тоже на дашборд */}
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Routes>
