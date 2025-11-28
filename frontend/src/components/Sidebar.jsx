@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-
 const iconProps = {
   width: 18,
   height: 18,
@@ -90,6 +89,17 @@ const IconSettings = () => (
   </svg>
 );
 
+const IconProfile = () => (
+  <svg {...iconProps}>
+    <circle cx="12" cy="9" r="3" stroke="currentColor" strokeWidth="1.6" />
+    <path
+      d="M6 18C6.8 16.2 8.6 15 12 15C15.4 15 17.2 16.2 18 18"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+    />
+  </svg>
+);
 
 const iconWrapperStyle = {
   width: 20,
@@ -199,6 +209,26 @@ export default function Sidebar() {
             <IconSettings />
           </span>
           <span style={labelStyle}>Источники</span>
+        </NavLink>
+
+        <div
+          style={{
+            marginTop: 10,
+            fontSize: 11,
+            textTransform: "uppercase",
+            letterSpacing: 0.12,
+            color: "#6f7484",
+            paddingInline: 2,
+          }}
+        >
+          Аккаунт
+        </div>
+
+        <NavLink to="/profile" className={navLinkClassName}>
+          <span className="sidebar-link-icon" style={iconWrapperStyle}>
+            <IconProfile />
+          </span>
+          <span style={labelStyle}>Профиль</span>
         </NavLink>
       </nav>
     </aside>

@@ -37,3 +37,45 @@ class ChatRequest(BaseModel):
 
 class ChatResponse(BaseModel):
     answer: str
+
+
+# --------- АВТОРИЗАЦИЯ / ПОЛЬЗОВАТЕЛИ ---------
+
+
+class User(BaseModel):
+    id: int
+    email: str
+    password_hash: str
+    created_at: str
+
+    # профиль:
+    username: Optional[str] = None
+    role: str = "user"
+    bio: Optional[str] = ""
+    avatar_url: Optional[str] = None
+
+
+class AuthRequest(BaseModel):
+    email: str
+    password: str
+
+
+class AuthResponse(BaseModel):
+    success: bool
+    message: str
+
+
+class UserProfile(BaseModel):
+    email: str
+    username: Optional[str]
+    role: str
+    bio: Optional[str]
+    avatar_url: Optional[str]
+    created_at: str
+
+
+class UserProfileUpdateRequest(BaseModel):
+    email: str
+    username: Optional[str] = None
+    role: Optional[str] = None
+    bio: Optional[str] = None
