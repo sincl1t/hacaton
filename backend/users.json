@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "email": "lis.gr@bk.ru",
+    "password_hash": "a17e2115705ae0b4a9b6b6a0710dde8fd00db3e946f994db6596c3831981a9e7",
+    "created_at": "2025-11-29T14:49:16.513903",
+    "username": "lis.gr",
+    "role": "user",
+    "bio": "",
+    "avatar_url": null
+  }
+]

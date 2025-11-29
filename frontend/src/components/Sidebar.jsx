@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import contentHubLogo from "../assets/contenthub-logo.png";
+import contentHubLogo from "../assets/icons/contenthub-logo.png";
+import ChatBotIcon from "../assets/icons/chatbot-icon.svg";
 
 const iconProps = {
   width: 18,
@@ -59,29 +60,7 @@ const IconCompare = () => (
   </svg>
 );
 
-const IconChat = () => (
-  <svg {...iconProps}>
-    <rect
-      x="3"
-      y="4"
-      width="18"
-      height="14"
-      rx="3"
-      stroke="currentColor"
-      strokeWidth="1.6"
-    />
-    <path
-      d="M9 18L8 21L12 18H9Z"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <circle cx="9" cy="11" r="1" fill="currentColor" />
-    <circle cx="12" cy="11" r="1" fill="currentColor" />
-    <circle cx="15" cy="11" r="1" fill="currentColor" />
-  </svg>
-);
+
 
 const IconSettings = () => (
   <svg {...iconProps}>
@@ -189,7 +168,7 @@ export default function Sidebar() {
               marginBottom: 2,
             }}
           >
-            ContentHub
+            GrandContentHub
           </div>
           <div style={{ fontSize: 11, color: "#9da3b5" }}>
             Реестр контента · MWS Tables
@@ -249,11 +228,12 @@ export default function Sidebar() {
 
         <NavLink to="/chat" className={navLinkClassName}>
           <span style={iconWrapperStyle}>
-            <IconChat />
+            <img src={ChatBotIcon} alt="chatbot icon" style={{ width: 18, height: 18 }} />
           </span>
           <span style={labelStyle}>Чат-бот (LLM)</span>
           <span style={badgeStyle}>beta</span>
         </NavLink>
+
 
         <NavLink to="/settings" className={navLinkClassName}>
           <span style={iconWrapperStyle}>

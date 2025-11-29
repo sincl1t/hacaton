@@ -85,12 +85,15 @@ body,
 }
 
 .auth-card {
-  background: #111827;
-  border-radius: 16px;
-  padding: 32px;
-  max-width: 400px;
-  width: 100%;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  background: #0b0f1a;
+  padding: 32px 40px 28px;
+  border-radius: 18px;
+
+  /* делаем карточку шире */
+  width: 520px;
+  max-width: 90vw;
+
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6);
 }
 
 .auth-card h1 {
@@ -366,4 +369,12 @@ body,
   padding: 20px;
   font-size: 14px;
   color: #9ca3af;
+}
+.auth-switch a {
+  color: #d94f69 !important;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  color: #ff6f8a !important; /* лёгкий светлый оттенок при наведении — красиво */
 }
