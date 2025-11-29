@@ -1,16 +1,21 @@
 // frontend/src/pages/Dashboard.jsx
 import React, { useEffect, useState } from "react";
 import { getSummary } from "../api";
-import KpiCard from "../components/KpiCard";
 import EngagementPanel from "../components/EngagementPanel";
 import StatsCharts from "../components/StatsCharts";
 import OverviewHero from "../components/OverviewHero";
+import FilterBar from "../components/FilterBar";
+import SummaryStrip from "../components/SummaryStrip";
 
 export default function Dashboard() {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const [network, setNetwork] = useState("all");
+  const [period, setPeriod] = useState("7d");
+
   useEffect(() => {
+    // пока фильтры только на UI – запрос один и тот же
     getSummary()
       .then((res) => setStats(res.data))
       .finally(() => setLoading(false));
@@ -20,45 +25,25 @@ export default function Dashboard() {
   if (!stats) return <div>Нет данных</div>;
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+    <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
       <h1 style={{ fontSize: 22, marginBottom: 4 }}>Dashboard</h1>
       <p style={{ fontSize: 13, color: "#9da3b5" }}>
         Быстрый обзор эффективности контента за выбранный период.
       </p>
 
-      {/* Новый hero-блок в стиле "Social Media Overview" */}
+      {/* Фильтры по соцсети и периоду */}
+      <FilterBar
+        network={network}
+        period={period}
+        onNetworkChange={setNetwork}
+        onPeriodChange={setPeriod}
+      />
+
+      {/* Hero-блок с общим охватом */}
       <OverviewHero stats={stats} />
 
-      {/* KPI карточки */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-          gap: 16,
-        }}
-      >
-        <KpiCard label="Всего публикаций" value={stats.total_items} />
-        <KpiCard
-          label="Просмотры"
-          value={stats.total_views.toLocaleString("ru-RU")}
-        />
-        <KpiCard
-          label="Лайки"
-          value={stats.total_likes.toLocaleString("ru-RU")}
-        />
-        <KpiCard
-          label="Комментарии"
-          value={stats.total_comments.toLocaleString("ru-RU")}
-        />
-        <KpiCard
-          label="Средний engagement"
-          value={(stats.avg_engagement * 100).toFixed(1) + "%"}
-        />
-        <KpiCard
-          label="Средний sentiment"
-          value={stats.avg_sentiment.toFixed(2)}
-        />
-      </div>
+      {/* Полоса-резюме по выбранному периоду */}
+      <SummaryStrip stats={stats} periodKey={period} />
 
       {/* Инфографика: вовлечённость + настроение аудитории */}
       <EngagementPanel stats={stats} />

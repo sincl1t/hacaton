@@ -148,18 +148,26 @@ export default function StatsCharts({ stats }) {
                 }}
               >
                 <div
-                  style={{
-                    width: "100%",
-                    borderRadius: 999,
-                    background:
-                      "linear-gradient(180deg, #38bdf8, rgba(15,23,42,0.9))",
-                    height: `${heightPx}px`,
-                    boxShadow: "0 0 10px rgba(56,189,248,0.6)",
-                  }}
-                  title={`${d.label}: ${d.views.toLocaleString(
-                    "ru-RU"
-                  )} просмотров`}
-                />
+                style={{
+                  width: "100%",
+                  height: `${heightPx}px`,
+                  borderRadius: 14,
+                  background: `
+                    linear-gradient(180deg,
+                      rgba(61,186,242,0.92) 0%,
+                      rgba(61,186,242,0.55) 55%,
+                      rgba(61,186,242,0.25) 78%,
+                      rgba(61,186,242,0.08) 100%
+                    )
+                  `,
+                  boxShadow: `
+                    0 4px 18px rgba(61,186,242,0.28),
+                    inset 0 -4px 10px rgba(0,0,0,0.18)
+                  `,
+                  transition: "0.25s ease",
+                }}
+              />
+
                 <div
                   style={{
                     fontSize: 10,

@@ -86,8 +86,17 @@ export default function ChatBot() {
           minHeight: 260,
           maxHeight: 460,
           borderRadius: 12,
-          border: "1px solid #2b3040",
-          backgroundColor: "#05060a",
+            background: `
+              linear-gradient(
+                180deg,
+                rgba(22, 28, 42, 0.9),
+                rgba(12, 17, 28, 0.92)
+              )
+            `,
+            border: "1px solid rgba(255,255,255,0.05)",
+            boxShadow: "inset 0 0 18px rgba(255,255,255,0.03)",
+            backdropFilter: "blur(4px)",
+
           padding: 12,
           overflowY: "auto",
           display: "flex",
@@ -137,8 +146,19 @@ export default function ChatBot() {
               padding: 10,
               borderRadius: 12,
               fontSize: 13,
-              backgroundColor: "#0a0f18",
-              border: "1px solid #2b3040",
+              background: `
+                  linear-gradient(
+                    180deg,
+                    rgba(18, 25, 38, 0.9) 0%,
+                    rgba(10, 14, 22, 0.92) 100%
+                  )
+                `,
+                border: "1px solid rgba(255,255,255,0.06)",
+                boxShadow: `
+                  inset 0 0 22px rgba(255,255,255,0.03),
+                  0 8px 18px rgba(0,0,0,0.28)
+                `,
+                backdropFilter: "blur(4px)",
               color: "#c2c6d0",
             }}
           >

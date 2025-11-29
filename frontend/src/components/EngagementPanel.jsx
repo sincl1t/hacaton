@@ -73,11 +73,16 @@ export default function EngagementPanel({ stats }) {
       {/* Блок "Вовлечённость на единицу контента" */}
       <div
         style={{
-          padding: 16,
-          borderRadius: 12,
-          border: "1px solid #2b3040",
-          background:
-            "radial-gradient(circle at top left, rgba(217,78,104,0.18), #050814)",
+          padding: 24,
+          borderRadius: 18,
+          border: "1px solid rgba(255,255,255,0.06)",
+          background: "linear-gradient(135deg, #16324a, #0f172a)",
+          boxShadow: `
+            0 0 38px rgba(100, 180, 255, 0.06),
+            0 0 120px rgba(140, 90, 255, 0.05),
+            inset 0 0 22px rgba(255,255,255,0.03)
+          `,
+          backdropFilter: "blur(4px)",
         }}
       >
         <div
@@ -153,7 +158,7 @@ export default function EngagementPanel({ stats }) {
                     height: "100%",
                     width: `${width}%`,
                     backgroundImage: row.color,
-                    boxShadow: "0 0 8px rgba(148,163,184,0.6)",
+                    boxShadow: "0 0 12px rgba(148,163,184,0.8), 0 0 24px rgba(148,163,184,0.4)",
                   }}
                 />
               </div>

@@ -56,7 +56,8 @@ export default function OverviewHero({ stats }) {
         borderRadius: 16,
         border: "1px solid #1f2937",
         background:
-          "radial-gradient(circle at top left, rgba(148,163,184,0.22), #020617)",
+        "linear-gradient(145deg, rgba(32,41,68,0.60), rgba(17,22,33,0.75) 40%, rgba(10,14,22,0.92) 90%)",
+
         display: "grid",
         gridTemplateColumns: "minmax(320px, 2fr) minmax(0, 3fr)",
         gap: 24,

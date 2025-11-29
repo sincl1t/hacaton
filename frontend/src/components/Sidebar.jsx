@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import contentHubLogo from "../assets/contenthub-logo.png";
 
 const iconProps = {
   width: 18,
@@ -27,7 +28,6 @@ const IconRegistry = () => (
   </svg>
 );
 
-// новая иконка таблиц
 const IconTables = () => (
   <svg {...iconProps}>
     <rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" strokeWidth="1.6" />
@@ -148,19 +148,52 @@ export default function Sidebar() {
       }}
     >
       {/* Логотип / заголовок */}
-      <div style={{ paddingInline: 2 }}>
+      <div
+        style={{
+          paddingInline: 2,
+          display: "flex",
+          alignItems: "center",
+          gap: 10,
+        }}
+      >
         <div
           style={{
-            fontWeight: 700,
-            fontSize: 18,
-            letterSpacing: 0.4,
-            marginBottom: 4,
+            width: 32,
+            height: 32,
+            borderRadius: 10,
+            overflow: "hidden",
+            backgroundColor: "#080d15",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          Web/DA
+          <img
+            src={contentHubLogo}
+            alt="ContentHub logo"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              display: "block",
+            }}
+          />
         </div>
-        <div style={{ fontSize: 11, color: "#9da3b5" }}>
-          Реестр контента · MWS Tables
+
+        <div>
+          <div
+            style={{
+              fontWeight: 700,
+              fontSize: 18,
+              letterSpacing: 0.4,
+              marginBottom: 2,
+            }}
+          >
+            ContentHub
+          </div>
+          <div style={{ fontSize: 11, color: "#9da3b5" }}>
+            Реестр контента · MWS Tables
+          </div>
         </div>
       </div>
 
@@ -200,7 +233,6 @@ export default function Sidebar() {
           <span style={labelStyle}>Реестр контента</span>
         </NavLink>
 
-        {/* новый пункт "Таблицы" */}
         <NavLink to="/tables" className={navLinkClassName}>
           <span style={iconWrapperStyle}>
             <IconTables />
