@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  backend:
+    build: ./backend
+    container_name: hackaton-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend/users.json:/app/users.json
+      - ./backend/user_uploads:/app/user_uploads
+    environment:
+      - PYTHONUNBUFFERED=1
+
+  frontend:
+    build: ./frontend
+    container_name: hackaton-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
