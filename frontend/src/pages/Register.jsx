@@ -58,14 +58,9 @@ function Register() {
     try {
       setLoading(true);
 
-      const formData = new FormData();
-      formData.append("email", form.email);
-      formData.append("password", form.password);
-      formData.append("role", form.role);
-      formData.append("bio", form.bio);
       if (avatar) formData.append("avatar", avatar);
 
-      await registerApi(formData);
+      await registerApi(form.email, form.password);
 
       login({ email: form.email });
       navigate("/dashboard");

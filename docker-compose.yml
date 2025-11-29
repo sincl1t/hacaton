@@ -7,10 +7,11 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - ./backend/users.json:/app/users.json
-      - ./backend/user_uploads:/app/user_uploads
+      - ./backend/users.json:/app/backend/users.json
+      - ./backend/user_uploads:/app/backend/user_uploads
     environment:
       - PYTHONUNBUFFERED=1
+
 
   frontend:
     build: ./frontend
