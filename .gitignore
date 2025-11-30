@@ -1,0 +1,36 @@
+# Global ignores
+__pycache__/
+*.py[cod]
+*.log
+.DS_Store
+.vscode/
+.idea/
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.env
+
+.python-version
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Agent artifacts
+agent/.langchain/
+agent/.cache/
+agent/models/
+agent/data/legal/legal.index
+agent/data/legal/legal.meta.json
+agent/data/**/*.tmp
+agent/logs/
+
+# Frontend build artifacts
+web/dist/
+web/node_modules/
+web/.turbo/
+
