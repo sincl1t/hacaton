@@ -28,19 +28,11 @@ Web/DA — это веб-приложение для анализа эффект
 - Mock-данные
 ---
 ## Как запустить проект
-
-### Backend
+Проект запускается полностью через Docker, без необходимости вручную поднимать backend и frontend.
+### Запуск
 ```bash
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --reload
-Backend поднимется на:
-http://localhost:8000
-Документация API:
-http://localhost:8000/docs
-Frontend
-cd frontend
-npm install
-npm run dev
-Frontend откроется на:
-http://localhost:5173
+docker compose up --build
+
+## После сборки и запуска сервисов приложение будет доступно по адресу:
+
+http://localhost/
