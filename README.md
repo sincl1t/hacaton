@@ -71,14 +71,14 @@ frontend/
 
 Docker и Compose
 docker/
-│   ├── Dockerfile            ← Общий докер-файл (если используется)
+│   ├── Dockerfile            ← Общий докер-файл 
 │   └── start.sh              ← Скрипт запуска
 │
 compose.yaml                  ← Главный Docker Compose (backend + frontend)
 ```
 Корень проекта
 ```bash
-package.json                 ← зависимости, если в корне тоже используется Node
+package.json                 ← зависимости
 pyproject.toml               ← конфигурация Python-проектов (ruff, форматирование)
 ruff.toml                    ← линтер
 uv.lock                      ← lock-файл uv
