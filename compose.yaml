@@ -1,0 +1,35 @@
+services:
+  backend:
+    container_name: hackathon-back
+    build:
+      args:
+        - "UID=${UID:-1000}"
+        - "GID=${GID:-1000}"
+      dockerfile: docker/Dockerfile
+      pull: true
+    env_file: backend/.env
+    user: "${UID:-1000}:${GID:-1000}"
+    init: true
+    logging:
+      driver: local
+    ports:
+      - "8000:8000"
+    restart: on-failure
+    networks:
+      - inside-services
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: docker/Dockerfile
+    container_name: hackathon-front
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - inside-services
+
+networks:
+  inside-services:
+    driver: bridge
+  
